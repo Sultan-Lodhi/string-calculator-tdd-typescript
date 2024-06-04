@@ -1,0 +1,14 @@
+{
+  "name": "tdd-using-typescript",
+  "version": "1.0.0",
+  "description": "string calculator using tdd",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest run"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vitest": "^1.6.0"
+  }
+}
