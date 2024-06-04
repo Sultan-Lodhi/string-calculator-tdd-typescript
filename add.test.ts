@@ -11,4 +11,10 @@ describe('add should', () => {
   test('return the sum of two numbers when given string contains two numbers', () => {
     expect(add('1,2')).toEqual(3);
   });
+  test('return the sum of three numbers when given string contains three numbers', () => {
+    expect(add('1,2,3')).toEqual(6);
+  });
+  test('return the sum of four numbers when given string contains four numbers', () => {
+    expect(add('1,2,3,4')).toEqual(10);
+  });
 });
