@@ -1,8 +1,9 @@
 export const add = (numbers: string): number => {
-  let sum: number = 0;
-  let delimiter: string = ',';
-  let newLine: string = '\n';
-  let newDelimter: string = '//';
+  let sum = 0;
+  let delimiter = ',';
+  let newLine = '\n';
+  let newDelimter = '//';
+  let negativeNumbers: string[] = [];
 
   const lines: string[] = numbers.split(newLine);
 
@@ -11,8 +12,14 @@ export const add = (numbers: string): number => {
       delimiter = line[2];
       continue;
     }
-    sum += line.split(delimiter).reduce((a, b) => a + ~~b, 0);
+    const values: string[] = line.split(delimiter);
+    for (const val of values) {
+      if (Number(val) > 0) sum += Number(val);
+      else val && negativeNumbers.push(val);
+    }
   }
+
+  if (negativeNumbers.length) throw new Error(`negative numbers not allowed ${negativeNumbers.join(',')}`);
 
   return sum;
 };

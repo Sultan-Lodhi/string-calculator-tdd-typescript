@@ -26,4 +26,7 @@ describe('add should', () => {
   test('return the sum of numbers when given string contains new delimiter', () => {
     expect(add('//;\n1;2')).toEqual(3);
   });
+  test('throw an exception when given string contains negative number(s)', () => {
+    expect(() => add('1,-2,-3')).toThrow('negative numbers not allowed -2,-3');
+  });
 });
