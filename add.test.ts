@@ -17,4 +17,7 @@ describe('add should', () => {
   test('return the sum of four numbers when given string contains four numbers', () => {
     expect(add('1,2,3,4')).toEqual(10);
   });
+  test('return the sum of numbers when given string contains one new line', () => {
+    expect(add('1,2\n3')).toEqual(6);
+  });
 });
