@@ -8,4 +8,7 @@ describe('add should', () => {
   test('return the number itself when given string contains one number', () => {
     expect(add('1')).toEqual(1);
   });
+  test('return the sum of two numbers when given string contains two numbers', () => {
+    expect(add('1,2')).toEqual(3);
+  });
 });
