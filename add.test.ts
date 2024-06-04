@@ -23,4 +23,7 @@ describe('add should', () => {
   test('return the sum of numbers when given string contains two new line', () => {
     expect(add('1,2\n3\n4')).toEqual(10);
   });
+  test('return the sum of numbers when given string contains new delimiter', () => {
+    expect(add('//;\n1;2')).toEqual(3);
+  });
 });
