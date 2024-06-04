@@ -1,6 +1,8 @@
 export const add = (numbers: string): number => {
   const lines = numbers.split('\n');
-  let sum = lines[0].split(',').reduce((a, b) => ~~a + ~~b, 0);
-  if (lines[1]) sum += add(lines[1]);
+  let sum = 0;
+  for (const line of lines) {
+    sum += line.split(',').reduce((a, b) => ~~a + ~~b, 0);
+  }
   return sum;
 };
